@@ -12,10 +12,12 @@ spec:
       labels:
         app: events
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: events
           image: {{ .Values.events.image }}
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
             - containerPort: {{ .Values.events.port }}
           env:

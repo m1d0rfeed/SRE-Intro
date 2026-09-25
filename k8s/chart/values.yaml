@@ -1,6 +1,6 @@
 gateway:
   replicas: 1
-  image: quickticket-gateway:v1
+  image: ghcr.io/m1d0rfeed/quickticket-gateway:aa58c9a90c7ca3ac9153e0da0d7f39735914811f
   port: 8080
   eventsUrl: http://events:8081
   paymentsUrl: http://payments:8082
@@ -8,7 +8,7 @@ gateway:
 
 events:
   replicas: 1
-  image: quickticket-events:v1
+  image: ghcr.io/m1d0rfeed/quickticket-events:aa58c9a90c7ca3ac9153e0da0d7f39735914811f
   port: 8081
   db:
     host: postgres
@@ -22,7 +22,7 @@ events:
 
 payments:
   replicas: 1
-  image: quickticket-payments:v1
+  image: ghcr.io/m1d0rfeed/quickticket-payments:aa58c9a90c7ca3ac9153e0da0d7f39735914811f
   port: 8082
   failureRate: "0.0"
   latencyMs: "0"
